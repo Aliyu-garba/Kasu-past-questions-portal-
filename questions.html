@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T89W78LJ3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2T89W78LJ3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KASU Past Questions Portal – Access Kaduna State University's past examination questions by course.">
+    <title>Past Questions | KASU Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #08080f;
+            --bg-primary: #0f0f1a;
+            --bg-card: rgba(22, 22, 37, 0.7);
+            --bg-card-hover: rgba(28, 28, 48, 0.8);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-medium: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(139, 92, 246, 0.35);
+            --text-primary: #f1f5f9;
+            --text-secondary: #b0b8c4;
+            --text-muted: #6b7280;
+            --accent: #8b5cf6;
+            --accent-light: #a78bfa;
+            --accent-glow: rgba(139, 92, 246, 0.4);
+            --emerald: #10b981;
+            --emerald-glow: rgba(16, 185, 129, 0.35);
+            --rose: #f43f5e;
+            --amber: #f59e0b;
+            --sky: #38bdf8;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            --radius-2xl: 28px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+            --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+            --transition-fast: 0.2s cubic-bezier(0.4,0,0.2,1);
+            --transition-smooth: 0.3s cubic-bezier(0.4,0,0.2,1);
+            --transition-bounce: 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .academic-font {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(15, 15, 26, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+            transition: all var(--transition-smooth);
+        }
+
+        .logo:hover {
+            box-shadow: 0 0 32px rgba(139, 92, 246, 0.5);
+            border-color: rgba(139, 92, 246, 0.7);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .university-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.3px;
+        }
+
+        .university-subtitle {
+            font-size: 0.7rem;
+            color: var(--accent-light);
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        /* Loading Screen */
+        #loading {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-deep);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.3s ease;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid rgba(139, 92, 246, 0.2);
+            border-top-color: var(--accent-light);
+            animation: spin 1s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa, #8b5cf6);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .page-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .page-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .info-badge {
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            color: var(--accent-light);
+        }
+
+        /* Training Message */
+        .training-message {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border-left: 5px solid var(--accent);
+        }
+
+        .training-message.siwes { border-left-color: #3b82f6; }
+        .training-message.teaching-practice { border-left-color: #059669; }
+        .training-message.clinical-posting { border-left-color: #f59e0b; }
+        .training-message.industrial-training { border-left-color: #8b5cf6; }
+
+        .message-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .message-icon.siwes { color: #3b82f6; }
+        .message-icon.teaching-practice { color: #059669; }
+        .message-icon.clinical-posting { color: #f59e0b; }
+        .message-icon.industrial-training { color: #8b5cf6; }
+
+        .message-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .message-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .search-wrapper {
+            position: relative;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            padding: 0.5rem;
+            box-shadow: var(--shadow-md);
+            transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+        }
+
+        .search-wrapper:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3.5rem 1rem 1.5rem;
+            border: none;
+            background: transparent;
+            font-size: 0.95rem;
+            color: white;
+            outline: none;
+            border-radius: 12px;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            border: none;
+            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all var(--transition-bounce);
+        }
+
+        .search-button:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.5);
+        }
+
+        .search-results-count {
+            text-align: center;
+            margin-top: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .course-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            opacity: 0.8;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-glow);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+            background: var(--bg-card-hover);
+        }
+
+        .course-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .course-code {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.3px;
+        }
+
+        .course-files-count {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .year-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .year-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .year-header {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .file-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            padding: 1rem 0.8rem;
+            text-align: center;
+            transition: all var(--transition-fast);
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .file-item:hover {
+            background: rgba(139, 92, 246, 0.08);
+            border-color: var(--border-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .file-icon {
+            font-size: 1.5rem;
+        }
+
+        .file-icon.image { color: var(--accent-light); }
+        .file-icon.pdf { color: #f87171; }
+        .file-icon.other { color: var(--text-muted); }
+
+        .file-name {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            word-break: break-all;
+            line-height: 1.2;
+        }
+
+        .file-action {
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .file-action:hover {
+            color: white;
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        /* No Results */
+        #noResults {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-2xl);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .no-results-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .no-results-icon {
+            font-size: 3rem;
+            color: var(--text-muted);
+        }
+
+        .no-results-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .no-results-description {
+            color: var(--text-secondary);
+            max-width: 400px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: #06060f;
+            border-top: 1px solid var(--border-subtle);
+            padding: 2rem 1.5rem;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .footer-disclaimer {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+        }
+
+        .copyright {
+            color: #555;
+            font-size: 0.7rem;
+        }
+
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            .files-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .files-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading past questions...</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="kasu-logo.jpg" alt="KASU Past Questions Portal Logo" class="logo">
+                <div class="logo-text">
+                    <div class="university-name">KASU Past Questions</div>
+                    <div class="university-subtitle">Powered by AGI Innovations</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <div class="content-container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 id="pageTitle" class="page-title">Past Questions</h1>
+                <p id="pageSubtitle" class="page-subtitle">Select a course to view available past questions</p>
+                <div class="info-badges">
+                    <span id="currentDept" class="info-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span id="deptText"></span>
+                    </span>
+                    <span id="currentLevel" class="info-badge">
+                        <i class="fas fa-layer-group"></i>
+                        <span id="levelText"></span>
+                    </span>
+                    <span id="currentSemester" class="info-badge">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="semesterText"></span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Training Message Container -->
+            <div id="trainingMessageContainer"></div>
+
+            <!-- Search Bar -->
+            <div class="search-container" id="searchContainer">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for a course (e.g., CSC101, Mathematics)">
+                    <button id="searchButton" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="searchResultsCount" class="search-results-count"></div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div id="coursesContainer" class="courses-grid">
+                <!-- Dynamically filled by JS -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden">
+                <div class="no-results-content">
+                    <div class="no-results-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h2 class="no-results-title">No Past Questions Available</h2>
+                    <p class="no-results-description">There are no past questions available for the selected department, level, and semester combination.</p>
+                    <button onclick="window.location.href='home.html'" class="btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <strong>Disclaimer:</strong> KASU Past Questions Portal is an independent student-created platform and is not officially affiliated with Kaduna State University. All materials are provided for educational and revision purposes only.
+            </div>
+            <div class="copyright">
+                &copy; 2025 KASU Past Questions Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Past question image">
+    </div>
+
+    <script>
+        // Global variables
+        let dept, level, semester;
+        let questionsData = {};
+        let allCourses = [];
+
+        // DOM elements
+        const loadingElement = document.getElementById('loading');
+        const coursesContainer = document.getElementById('coursesContainer');
+        const noResultsElement = document.getElementById('noResults');
+        const pageTitle = document.getElementById('pageTitle');
+        const pageSubtitle = document.getElementById('pageSubtitle');
+        const deptText = document.getElementById('deptText');
+        const levelText = document.getElementById('levelText');
+        const semesterText = document.getElementById('semesterText');
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const searchResultsCount = document.getElementById('searchResultsCount');
+        const trainingMessageContainer = document.getElementById('trainingMessageContainer');
+        const searchContainer = document.getElementById('searchContainer');
+
+        // Department classifications for training programs (using KASU department codes)
+        const trainingConfig = {
+            siwes: {
+                departments: [
+                    'computer-science', 'mathematics', 'statistics', 'physics',
+                    'education-and-physics', 'chemistry', 'biology', 'biochemistry',
+                    'microbiology', 'environmental-management', 'agriculture'
+                ],
+                level: '300-level',
+                semester: 'second',
+                message: {
+                    title: 'Industrial Training (SIWES)',
+                    description: 'This semester is dedicated to the Student Industrial Work Experience Scheme (SIWES). Check your faculty calendar for placement details and registration information.',
+                    type: 'siwes',
+                    icon: 'fas fa-industry'
+                }
+            },
+
+            teachingPractice: {
+                departments: [
+                    'education-and-biology', 'education-and-chemistry', 'education-and-english-language',
+                    'education-and-mathematics', 'education-and-physics'
+                ],
+                level: '300-level',
+                semester: 'second',
+                message: {
+                    title: 'Teaching Practice',
+                    description: 'This semester is dedicated to Teaching Practice for Education students. Check your faculty calendar for placement details and registration information.',
+                    type: 'teaching-practice',
+                    icon: 'fas fa-chalkboard-teacher'
+                }
+            },
+
+            clinicalPosting300: {
+                departments: [
+                    'nursing-nursing-science'
+                ],
+                level: '300-level',
+                semester: 'second',
+                message: {
+                    title: 'Clinical Posting',
+                    description: 'This semester is dedicated to Clinical Posting for Medical and Health Science students. Check your faculty calendar for placement details and registration information.',
+                    type: 'clinical-posting',
+                    icon: 'fas fa-hospital-user'
+                }
+            },
+
+            clinicalPosting400: {
+                departments: [],
+                level: '400-level',
+                semester: 'second',
+                message: {
+                    title: 'Clinical Posting',
+                    description: 'This semester is dedicated to Clinical Posting for Health Science students. Check your faculty calendar for placement details and registration information.',
+                    type: 'clinical-posting',
+                    icon: 'fas fa-hospital-user'
+                }
+            },
+
+            pharmacyTraining: {
+                departments: ['pharmacy'],
+                level: '500-level',
+                semester: 'second',
+                message: {
+                    title: 'Clinical Training / Externship',
+                    description: 'This semester is dedicated to Clinical Training or Professional Externship for Pharmacy students. Check your faculty calendar for placement details and registration information.',
+                    type: 'clinical-posting',
+                    icon: 'fas fa-pills'
+                }
+            },
+
+            industrialTraining: {
+                departments: ['environmental-management'],
+                level: '400-level',
+                semester: 'second',
+                message: {
+                    title: 'Industrial Training',
+                    description: 'This semester is dedicated to Industrial Training for Environmental Management students. Check your faculty calendar for placement details and registration information.',
+                    type: 'industrial-training',
+                    icon: 'fas fa-hard-hat'
+                }
+            }
+        };
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            dept = urlParams.get('dept');
+            level = urlParams.get('level');
+            semester = urlParams.get('semester');
+
+            if (!dept || !level || !semester) {
+                showError('Invalid parameters. Please go back and select department, level, and semester.');
+                return;
+            }
+
+            updatePageInfo();
+            loadQuestionsData();
+
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('input', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') performSearch();
+            });
+
+            imageModal.addEventListener('click', function(event) {
+                if (event.target === imageModal) closeModal();
+            });
+        });
+
+        function updatePageInfo() {
+            const deptDisplay = formatDepartment(dept);
+            const levelDisplay = level.charAt(0).toUpperCase() + level.slice(1).replace('-', ' ');
+            const semesterDisplay = semester === 'first' ? 'First Semester' : 'Second Semester';
+
+            pageTitle.textContent = `${deptDisplay} Past Questions`;
+            pageSubtitle.textContent = `${levelDisplay} - ${semesterDisplay}`;
+            deptText.textContent = deptDisplay;
+            levelText.textContent = levelDisplay;
+            semesterText.textContent = semesterDisplay;
+        }
+
+        function loadQuestionsData() {
+            fetch('data/questions.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to load questions data');
+                    return response.json();
+                })
+                .then(data => {
+                    questionsData = data;
+                    displayCourses();
+                })
+                .catch(error => {
+                    console.error('Error loading questions data:', error);
+                    showError('Failed to load past questions. Please try again later.');
+                });
+        }
+
+        function displayCourses() {
+            loadingElement.style.display = 'none';
+
+            const trainingInfo = checkTrainingSemester();
+            if (trainingInfo) {
+                showTrainingMessage(trainingInfo);
+                return;
+            }
+
+            if (!questionsData[dept] || !questionsData[dept][level] || !questionsData[dept][level][semester]) {
+                noResultsElement.classList.remove('hidden');
+                searchContainer.style.display = 'none';
+                return;
+            }
+
+            const courses = questionsData[dept][level][semester];
+            const courseCodes = Object.keys(courses);
+
+            if (courseCodes.length === 0) {
+                noResultsElement.classList.remove('hidden');
+                searchContainer.style.display = 'none';
+                return;
+            }
+
+            allCourses = courseCodes.map(code => ({
+                code,
+                files: courses[code],
+                element: createCourseCard(code, courses[code])
+            }));
+
+            displayFilteredCourses(allCourses);
+        }
+
+        function checkTrainingSemester() {
+            for (const [type, config] of Object.entries(trainingConfig)) {
+                if (config.departments.includes(dept) && level === config.level && semester === config.semester) {
+                    return config.message;
+                }
+            }
+            return null;
+        }
+
+        function showTrainingMessage(trainingInfo) {
+            const html = `
+                <div class="training-message ${trainingInfo.type}">
+                    <div class="message-icon ${trainingInfo.type}">
+                        <i class="${trainingInfo.icon}"></i>
+                    </div>
+                    <h2 class="message-title">${trainingInfo.title}</h2>
+                    <p class="message-description">${trainingInfo.description}</p>
+                    <button onclick="window.location.href='home.html'" class="btn">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </button>
+                </div>
+            `;
+            trainingMessageContainer.innerHTML = html;
+            searchContainer.style.display = 'none';
+            coursesContainer.style.display = 'none';
+        }
+
+        function displayFilteredCourses(courses) {
+            coursesContainer.innerHTML = '';
+            courses.forEach(course => coursesContainer.appendChild(course.element));
+            updateSearchResultsCount(courses.length);
+        }
+
+        function updateSearchResultsCount(count) {
+            const total = allCourses.length;
+            if (count === total) searchResultsCount.textContent = `Showing all ${total} courses`;
+            else if (count === 0) searchResultsCount.textContent = 'No courses match your search';
+            else searchResultsCount.textContent = `Showing ${count} of ${total} courses`;
+        }
+
+        function performSearch() {
+            const term = searchInput.value.trim().toLowerCase();
+            if (term === '') {
+                displayFilteredCourses(allCourses);
+                return;
+            }
+            const filtered = allCourses.filter(c => c.code.toLowerCase().includes(term));
+            displayFilteredCourses(filtered);
+        }
+
+        function createCourseCard(courseCode, files) {
+            const filesByYear = groupFilesByYear(files);
+            const years = Object.keys(filesByYear).sort((a,b) => b - a);
+
+            const card = document.createElement('div');
+            card.className = 'course-card';
+            card.setAttribute('data-course-code', courseCode);
+
+            const header = document.createElement('div');
+            header.className = 'course-header';
+            const title = document.createElement('h3');
+            title.className = 'course-code';
+            title.textContent = courseCode.toUpperCase();
+            const count = document.createElement('p');
+            count.className = 'course-files-count';
+            count.innerHTML = `<i class="fas fa-file"></i> ${files.length} file${files.length !== 1 ? 's' : ''} available`;
+            header.appendChild(title);
+            header.appendChild(count);
+            card.appendChild(header);
+
+            years.forEach(year => {
+                const group = document.createElement('div');
+                group.className = 'year-group';
+                const yearHeader = document.createElement('h4');
+                yearHeader.className = 'year-header';
+                yearHeader.textContent = year;
+                group.appendChild(yearHeader);
+
+                const grid = document.createElement('div');
+                grid.className = 'files-grid';
+                filesByYear[year].forEach(file => grid.appendChild(createFileElement(file)));
+                group.appendChild(grid);
+                card.appendChild(group);
+            });
+
+            return card;
+        }
+
+        function groupFilesByYear(files) {
+            const grouped = {};
+            files.forEach(file => {
+                const match = file.match(/_(\d{4})/);
+                const year = match ? match[1] : 'Unknown';
+                if (!grouped[year]) grouped[year] = [];
+                grouped[year].push(file);
+            });
+            return grouped;
+        }
+
+        function createFileElement(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const path = `data/images/${filename}`;
+            const item = document.createElement('div');
+            item.className = 'file-item';
+
+            let iconHtml = '';
+            if (['jpg','jpeg','png','gif','webp'].includes(ext)) {
+                iconHtml = '<div class="file-icon image"><i class="fas fa-image"></i></div>';
+            } else if (ext === 'pdf') {
+                iconHtml = '<div class="file-icon pdf"><i class="fas fa-file-pdf"></i></div>';
+            } else {
+                iconHtml = '<div class="file-icon other"><i class="fas fa-file"></i></div>';
+            }
+
+            const nameEl = document.createElement('div');
+            nameEl.className = 'file-name';
+            nameEl.textContent = filename;
+
+            const action = document.createElement('a');
+            action.className = 'file-action';
+            if (['jpg','jpeg','png','gif','webp'].includes(ext)) {
+                action.href = '#';
+                action.textContent = 'View';
+                action.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openImageModal(path);
+                });
+            } else {
+                action.href = path;
+                action.target = '_blank';
+                action.textContent = ext === 'pdf' ? 'Open PDF' : 'Download';
+            }
+
+            item.innerHTML = iconHtml;
+            item.appendChild(nameEl);
+            item.appendChild(action);
+            return item;
+        }
+
+        function openImageModal(src) {
+            modalImage.src = src;
+            imageModal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            imageModal.style.display = 'none';
+        }
+
+        // Full KASU department display name mapping (matches homepage)
+        function formatDepartment(deptCode) {
+            const map = {
+                'accounting': 'Accounting',
+                'agriculture': 'Agriculture',
+                'arabic-studies': 'Arabic Studies',
+                'architecture': 'Architecture',
+                'banking-and-finance': 'Banking and Finance',
+                'biochemistry': 'Biochemistry',
+                'biological-sciences': 'Biological Sciences',
+                'biology': 'Biology',
+                'biotechnology': 'Biotechnology',
+                'building-technology': 'Building Technology',
+                'business-administration': 'Business Administration',
+                'chemistry': 'Chemistry',
+                'chinese-studies': 'Chinese Studies',
+                'christian-religious-studies-crs': 'Christian Religious Studies (CRS)',
+                'computer-science': 'Computer Science',
+                'criminology-and-security-studies': 'Criminology and Security Studies',
+                'drama-performing-arts': 'Drama / Performing Arts',
+                'economics': 'Economics',
+                'education-and-arabic': 'Education and Arabic',
+                'education-and-biology': 'Education and Biology',
+                'education-and-chemistry': 'Education and Chemistry',
+                'education-and-christian-religious-studies': 'Education and Christian Religious Studies',
+                'education-and-economics': 'Education and Economics',
+                'education-and-english-language': 'Education and English Language',
+                'education-and-geography': 'Education and Geography',
+                'education-and-hausa': 'Education and Hausa',
+                'education-and-islamic-studies': 'Education and Islamic Studies',
+                'education-and-mathematics': 'Education and Mathematics',
+                'education-and-physics': 'Education and Physics',
+                'english-studies': 'English Studies',
+                'entrepreneurship': 'Entrepreneurship',
+                'environmental-management': 'Environmental Management',
+                'estate-management': 'Estate Management',
+                'french': 'French',
+                'geography': 'Geography',
+                'geology': 'Geology',
+                'geophysics': 'Geophysics',
+                'hausa': 'Hausa',
+                'history': 'History',
+                'industrial-chemistry': 'Industrial Chemistry',
+                'industrial-relations-and-personnel-management': 'Industrial Relations and Personnel Management',
+                'international-relations-and-diplomacy': 'International Relations and Diplomacy',
+                'international-studies-and-diplomacy': 'International Studies and Diplomacy',
+                'islamic-studies': 'Islamic Studies',
+                'linguistics': 'Linguistics',
+                'marketing': 'Marketing',
+                'mass-communication': 'Mass Communication',
+                'mathematics': 'Mathematics',
+                'medical-laboratory-science': 'Medical Laboratory Science',
+                'medicine-and-surgery': 'Medicine and Surgery',
+                'microbiology': 'Microbiology',
+                'nursing-nursing-science': 'Nursing / Nursing Science',
+                'pharmacy': 'Pharmacy',
+                'physics': 'Physics',
+                'physiotherapy': 'Physiotherapy',
+                'political-science': 'Political Science',
+                'quantity-surveying': 'Quantity Surveying',
+                'radiography': 'Radiography',
+                'sociology': 'Sociology',
+                'statistics': 'Statistics',
+                'theatre-arts': 'Theatre Arts'
+            };
+            return map[deptCode] || deptCode.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        }
+
+        function showError(message) {
+            loadingElement.style.display = 'none';
+            coursesContainer.innerHTML = `
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-code">Error</h3>
+                        <p class="course-files-count"><i class="fas fa-exclamation-circle"></i> Unable to load content</p>
+                    </div>
+                    <div class="year-group">
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">${message}</p>
+                        <button onclick="window.location.href='home.html'" class="btn">
+                            <i class="fas fa-arrow-left"></i> Back to Home
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

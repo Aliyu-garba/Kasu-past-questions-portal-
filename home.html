@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T89W78LJ3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2T89W78LJ3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KASU Past Questions Portal – access Kaduna State University's past exam questions and 100-level tutorial materials for all departments.">
+    <title>KASU Past Questions Portal | Kaduna State University</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f5f5f7;
+            --bg-surface: #ffffff;
+            --bg-elevated: #fafafa;
+            --bg-muted: #f0f0f2;
+            --text-primary: #1a1a1f;
+            --text-secondary: #5c5c66;
+            --text-muted: #8e8e98;
+            --border-light: #e8e8ec;
+            --border-medium: #dddde3;
+            --accent: #ff6b35;
+            --accent-hover: #e85d2c;
+            --accent-soft: #fff5f2;
+            --accent-glow: rgba(255, 107, 53, 0.3);
+            --green: #0ea872;
+            --green-soft: #edfaf5;
+            --blue: #3b6df0;
+            --blue-soft: #eef3fd;
+            --purple: #7c3aed;
+            --purple-soft: #f5f0ff;
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.10);
+            --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.12);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 22px;
+            --radius-2xl: 28px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border-light);
+            transition: all var(--transition);
+            padding: 0.5rem 0;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-medium);
+        }
+        .nav-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            z-index: 1001;
+        }
+        .nav-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+            transition: all var(--transition);
+        }
+        .nav-logo:hover {
+            transform: scale(1.06);
+        }
+        .nav-brand-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+        .nav-brand-sub {
+            display: block;
+            font-size: 0.65rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            list-style: none;
+        }
+        .nav-link {
+            color: var(--text-secondary);
+            padding: 0.5rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.81rem;
+            transition: all var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.1px;
+        }
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: var(--bg-muted);
+        }
+        .nav-link.accent-link {
+            color: var(--accent);
+            font-weight: 600;
+            background: var(--accent-soft);
+            border: 1px solid rgba(255, 107, 53, 0.15);
+        }
+        .nav-link.accent-link:hover {
+            background: #fff0eb;
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+        .nav-link.emerald-link {
+            color: var(--green);
+            font-weight: 600;
+            background: var(--green-soft);
+            border: 1px solid rgba(14, 168, 114, 0.15);
+        }
+        .nav-link.emerald-link:hover {
+            background: #e0f7ef;
+            border-color: rgba(14, 168, 114, 0.3);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            background: var(--bg-muted);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 0.5rem 0.55rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all var(--transition);
+        }
+        .hamburger:hover {
+            background: var(--border-light);
+        }
+        .hamburger-line {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 4px;
+            margin: 4px 0;
+            transition: all var(--transition);
+        }
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow-lg);
+            padding: 1rem 0.85rem;
+            flex-direction: column;
+            gap: 0.35rem;
+            z-index: 999;
+            border: 1px solid var(--border-light);
+            border-top: none;
+            animation: slideDown 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+        .mobile-menu .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            padding: 3.5rem 1.5rem 4rem;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(175deg, #fefefe 0%, #fafafc 30%, #f5f5f7 70%, #fff 100%);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -160px;
+            right: -100px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            left: -80px;
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(59, 109, 240, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-soft);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 50px;
+            padding: 0.4rem 1.1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.2px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.5s ease-out;
+        }
+        .hero-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(1.7);
+            }
+        }
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text-primary);
+            max-width: 750px;
+            margin: 0 auto 1rem;
+            letter-spacing: -0.8px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .hero-title .highlight {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--accent-soft);
+            border-radius: 3px;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            animation: fadeInUp 0.7s ease-out;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-spring);
+            box-shadow: 0 6px 22px var(--accent-glow);
+            animation: fadeInUp 0.8s ease-out;
+            letter-spacing: 0.1px;
+        }
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+            background: var(--accent-hover);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== SELECTION CARD ========== */
+        .selection-wrapper {
+            max-width: 720px;
+            margin: -2rem auto 0;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 20;
+        }
+        .selection-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-2xl);
+            padding: 2rem 1.75rem;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition);
+        }
+        .selection-card:hover {
+            box-shadow: var(--shadow-xl);
+            border-color: var(--border-medium);
+        }
+        .selection-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.3px;
+        }
+        .selection-subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-muted);
+            border: 1.5px solid var(--border-light);
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%238e8e98' viewBox='0 0 16 16'%3E%3Cpath d='M8 10.5L3.5 6h9L8 10.5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.9rem center;
+            background-size: 1em;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+            background: #fff;
+        }
+        .form-select option {
+            background: #fff;
+            color: var(--text-primary);
+            padding: 0.5rem;
+        }
+        .btn-proceed {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.85rem 1.8rem;
+            border-radius: 14px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-spring);
+            gap: 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 18px var(--accent-glow);
+            letter-spacing: 0.1px;
+            margin-top: 0.5rem;
+        }
+        .btn-proceed:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(255, 107, 53, 0.4);
+            background: var(--accent-hover);
+        }
+        .btn-proceed:active {
+            transform: scale(0.97);
+        }
+
+        /* Quick access */
+        .quick-access-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.7rem;
+            margin-top: 1.25rem;
+        }
+        .quick-access-card {
+            background: var(--bg-muted);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1rem 0.85rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .quick-access-card:hover {
+            background: #fff;
+            border-color: var(--border-medium);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .quick-access-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+        .quick-access-icon.tools {
+            background: var(--accent);
+        }
+        .quick-access-icon.assistant {
+            background: var(--green);
+        }
+        .quick-access-label {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+        .quick-access-desc {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        /* ========== STATS ========== */
+        .stats-section {
+            max-width: 1050px;
+            margin: 2.5rem auto 0;
+            padding: 0 1.5rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .stat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.3rem 1rem;
+            text-align: center;
+            transition: all var(--transition);
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-medium);
+        }
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
+        /* ========== DEPARTMENTS ========== */
+        .departments-section {
+            max-width: 1050px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        .section-heading {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.3px;
+        }
+        .section-subheading {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 1.75rem;
+            font-size: 0.85rem;
+        }
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.75rem;
+        }
+        .dept-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1rem 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+        .dept-card:hover {
+            background: #fff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .dept-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .dept-name {
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--text-primary);
+            margin-bottom: 0.1rem;
+        }
+        .dept-desc {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== TUTORIALS ========== */
+        .tutorials-section {
+            max-width: 1050px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        .tutorials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+        .tutorial-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: 1.75rem 1.5rem;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .tutorial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+        .tutorial-card:nth-child(1)::before {
+            background: var(--accent);
+        }
+        .tutorial-card:nth-child(2)::before {
+            background: var(--green);
+        }
+        .tutorial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-medium);
+        }
+        .tutorial-icon-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 0.85rem;
+        }
+        .tutorial-icon-circle.purple {
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+        .tutorial-icon-circle.emerald {
+            background: var(--green-soft);
+            color: var(--green);
+        }
+        .tutorial-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.2px;
+        }
+        .tutorial-desc {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 1.1rem;
+            line-height: 1.5;
+        }
+        .btn-tutorial {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-spring);
+            letter-spacing: 0.1px;
+        }
+        .btn-tutorial.purple {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 3px 14px var(--accent-glow);
+        }
+        .btn-tutorial.purple:hover {
+            box-shadow: 0 6px 22px rgba(255, 107, 53, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-tutorial.emerald {
+            background: var(--green);
+            color: #fff;
+            box-shadow: 0 3px 14px rgba(14, 168, 114, 0.25);
+        }
+        .btn-tutorial.emerald:hover {
+            box-shadow: 0 6px 22px rgba(14, 168, 114, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ========== SOCIAL ========== */
+        .social-section {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+        .social-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.2px;
+        }
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all var(--transition-spring);
+        }
+        .social-link.whatsapp {
+            background: #25D366;
+        }
+        .social-link.tiktok {
+            background: #1a1a1a;
+        }
+        .social-link.facebook {
+            background: #1877F2;
+        }
+        .social-link.instagram {
+            background: #E4405F;
+        }
+        .social-link.twitter {
+            background: #1DA1F2;
+        }
+        .social-link.youtube {
+            background: #FF0000;
+        }
+        .social-link.telegram {
+            background: #26A5E4;
+        }
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #1a1a1f;
+            padding: 3rem 1.5rem 1.5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1050px;
+            margin: 0 auto 2rem;
+        }
+        .footer-col-title {
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: #fff;
+            margin-bottom: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .footer-link {
+            color: #999;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.82rem;
+            transition: color var(--transition);
+        }
+        .footer-link:hover {
+            color: #fff;
+        }
+        .footer-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #999;
+            font-size: 0.82rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer-info a {
+            color: #999;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        .footer-info a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            color: #888;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+        .footer-copyright {
+            margin-top: 0.6rem;
+            font-size: 0.7rem;
+            color: #555;
+        }
+
+        /* ========== WHATSAPP BANNER ========== */
+        .whatsapp-banner {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            max-width: 370px;
+            width: 90%;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            animation: slideInUp 0.45s ease-out;
+            display: none;
+        }
+        .banner-content {
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            gap: 10px;
+        }
+        .banner-icon-circle {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            background: #25D366;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.15rem;
+        }
+        .banner-text {
+            flex-grow: 1;
+        }
+        .banner-title-text {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+        .banner-subtitle-text {
+            color: var(--text-muted);
+            font-size: 0.73rem;
+            line-height: 1.3;
+        }
+        .banner-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .banner-button {
+            background: #25D366;
+            color: #fff;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all var(--transition-spring);
+        }
+        .banner-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+        .banner-close-btn {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--bg-muted);
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            transition: all var(--transition);
+            flex-shrink: 0;
+        }
+        .banner-close-btn:hover {
+            background: #e0e0e4;
+            color: var(--text-primary);
+        }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== OFFLINE OVERLAY ========== */
+        #offlineMessage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 245, 247, 0.97);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .offline-content {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            max-width: 380px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+        .offline-content .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fef2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: #ef4444;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            .tutorials-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2.5rem 1rem 3.5rem;
+            }
+            .hero-title {
+                font-size: 1.55rem;
+            }
+            .hero-subtitle {
+                font-size: 0.85rem;
+            }
+            .selection-card {
+                padding: 1.4rem 1rem;
+            }
+            .selection-wrapper {
+                margin-top: -1.5rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .stat-number {
+                font-size: 1.4rem;
+            }
+            .stat-label {
+                font-size: 0.65rem;
+            }
+            .departments-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .dept-card {
+                padding: 0.8rem 0.6rem;
+                gap: 0.5rem;
+            }
+            .dept-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+                border-radius: 8px;
+            }
+            .dept-name {
+                font-size: 0.72rem;
+            }
+            .dept-desc {
+                font-size: 0.6rem;
+            }
+            .quick-access-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .whatsapp-banner {
+                top: 65px;
+                right: 6px;
+                left: 6px;
+                width: auto;
+                max-width: none;
+            }
+            .mobile-menu {
+                padding: 0.85rem 0.6rem;
+            }
+            .mobile-menu .nav-link {
+                padding: 0.65rem 0.85rem;
+                font-size: 0.82rem;
+            }
+            .nav-brand-name {
+                font-size: 0.9rem;
+            }
+            .nav-logo {
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 0.6rem 3rem;
+            }
+            .hero-title {
+                font-size: 1.35rem;
+            }
+            .hero-subtitle {
+                font-size: 0.78rem;
+            }
+            .selection-card {
+                padding: 1.1rem 0.75rem;
+                border-radius: 18px;
+            }
+            .selection-wrapper {
+                margin-top: -1.2rem;
+                padding: 0 0.6rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .stat-card {
+                padding: 0.9rem 0.5rem;
+                border-radius: 12px;
+            }
+            .stat-number {
+                font-size: 1.2rem;
+            }
+            .stat-label {
+                font-size: 0.6rem;
+            }
+            .departments-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+            .dept-card {
+                padding: 0.65rem 0.5rem;
+                border-radius: 10px;
+            }
+            .dept-name {
+                font-size: 0.68rem;
+            }
+            .quick-access-row {
+                grid-template-columns: 1fr;
+                gap: 0.4rem;
+            }
+            .btn-proceed {
+                font-size: 0.82rem;
+                padding: 0.7rem 1.3rem;
+            }
+            .social-link {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Offline Message -->
+    <div id="offlineMessage">
+        <div class="offline-content">
+            <div class="icon-circle">
+                <i class="fas fa-wifi"></i>
+            </div>
+            <h2 class="text-xl font-bold text-gray-900 mb-2">No Internet Connection</h2>
+            <p class="text-gray-500 mb-4 text-sm">Please connect to the internet to continue using the KASU Past Questions Portal.</p>
+            <p class="text-gray-400 text-xs">This portal requires an active internet connection to function properly.</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand" aria-label="KASU Past Questions Portal Home">
+                <img src="kasu-logo.jpg" alt="KASU Past Questions Portal Logo" class="nav-logo">
+                <div>
+                    <span class="nav-brand-name">KASU Past Questions</span>
+                    <span class="nav-brand-sub">Powered By AGI Innovations</span>
+                </div>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="disclaimer.html" class="nav-link">Disclaimer</a></li>
+                    <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+                    <li><a href="terms.html" class="nav-link">Terms</a></li>
+                    <li><a href="freshers-guide.html" class="nav-link">Freshers Guide</a></li>
+                    <li><a href="students-tools.html" class="nav-link accent-link"><i class="fas fa-tools mr-1"></i>Tools</a></li>
+                    <li><a href="chatbot.html" class="nav-link emerald-link"><i class="fas fa-robot mr-1"></i>Assistant</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="disclaimer.html" class="nav-link">Disclaimer</a>
+            <a href="privacy.html" class="nav-link">Privacy & Policy</a>
+            <a href="terms.html" class="nav-link">Terms & Conditions</a>
+            <a href="freshers-guide.html" class="nav-link">Freshers Guide</a>
+            <a href="students-tools.html" class="nav-link accent-link"><i class="fas fa-tools"></i> Students Tools</a>
+            <a href="chatbot.html" class="nav-link emerald-link"><i class="fas fa-robot"></i> KASU Assistant</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Now Active — 2025/2026 Session
+        </div>
+        <h1 class="hero-title">
+            Ace Your Exams with the <span class="highlight">KASU Past Questions</span> Portal
+        </h1>
+        <p class="hero-subtitle">
+            Access thousands of past examination questions from Kaduna State University. Select your department, level, and semester and get instant access to curated revision materials.
+        </p>
+        <button class="hero-cta" onclick="document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+            <i class="fas fa-search"></i> Find Past Questions
+            <i class="fas fa-arrow-down ml-1"></i>
+        </button>
+    </section>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Floating Selection Card -->
+        <div class="selection-wrapper" id="selectionSection">
+            <div class="selection-card">
+                <h2 class="selection-title">Find Your Past Questions</h2>
+                <p class="selection-subtitle">Select your department, level, and semester to access relevant past examination questions.</p>
+
+                <div class="form-group">
+                    <label for="department" class="form-label">Department</label>
+                    <select id="department" class="form-select">
+                        <option value="">— Choose Department —</option>
+                        <option value="accounting">Accounting</option>
+                        <option value="agriculture">Agriculture</option>
+                        <option value="arabic-studies">Arabic Studies</option>
+                        <option value="architecture">Architecture</option>
+                        <option value="banking-and-finance">Banking and Finance</option>
+                        <option value="biochemistry">Biochemistry</option>
+                        <option value="biological-sciences">Biological Sciences</option>
+                        <option value="biology">Biology</option>
+                        <option value="biotechnology">Biotechnology</option>
+                        <option value="building-technology">Building Technology</option>
+                        <option value="business-administration">Business Administration</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="chinese-studies">Chinese Studies</option>
+                        <option value="christian-religious-studies-crs">Christian Religious Studies (CRS)</option>
+                        <option value="computer-science">Computer Science</option>
+                        <option value="criminology-and-security-studies">Criminology and Security Studies</option>
+                        <option value="drama-performing-arts">Drama / Performing Arts</option>
+                        <option value="economics">Economics</option>
+                        <option value="education-and-arabic">Education and Arabic</option>
+                        <option value="education-and-biology">Education and Biology</option>
+                        <option value="education-and-chemistry">Education and Chemistry</option>
+                        <option value="education-and-christian-religious-studies">Education and Christian Religious Studies</option>
+                        <option value="education-and-economics">Education and Economics</option>
+                        <option value="education-and-english-language">Education and English Language</option>
+                        <option value="education-and-geography">Education and Geography</option>
+                        <option value="education-and-hausa">Education and Hausa</option>
+                        <option value="education-and-islamic-studies">Education and Islamic Studies</option>
+                        <option value="education-and-mathematics">Education and Mathematics</option>
+                        <option value="education-and-physics">Education and Physics</option>
+                        <option value="english-studies">English Studies</option>
+                        <option value="entrepreneurship">Entrepreneurship</option>
+                        <option value="environmental-management">Environmental Management</option>
+                        <option value="estate-management">Estate Management</option>
+                        <option value="french">French</option>
+                        <option value="geography">Geography</option>
+                        <option value="geology">Geology</option>
+                        <option value="geophysics">Geophysics</option>
+                        <option value="hausa">Hausa</option>
+                        <option value="history">History</option>
+                        <option value="industrial-chemistry">Industrial Chemistry</option>
+                        <option value="industrial-relations-and-personnel-management">Industrial Relations and Personnel Management</option>
+                        <option value="international-relations-and-diplomacy">International Relations and Diplomacy</option>
+                        <option value="international-studies-and-diplomacy">International Studies and Diplomacy</option>
+                        <option value="islamic-studies">Islamic Studies</option>
+                        <option value="linguistics">Linguistics</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="mass-communication">Mass Communication</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="medical-laboratory-science">Medical Laboratory Science</option>
+                        <option value="medicine-and-surgery">Medicine and Surgery</option>
+                        <option value="microbiology">Microbiology</option>
+                        <option value="nursing-nursing-science">Nursing / Nursing Science</option>
+                        <option value="pharmacy">Pharmacy</option>
+                        <option value="physics">Physics</option>
+                        <option value="physiotherapy">Physiotherapy</option>
+                        <option value="political-science">Political Science</option>
+                        <option value="quantity-surveying">Quantity Surveying</option>
+                        <option value="radiography">Radiography</option>
+                        <option value="sociology">Sociology</option>
+                        <option value="statistics">Statistics</option>
+                        <option value="theatre-arts">Theatre Arts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="level" class="form-label">Level</label>
+                    <select id="level" class="form-select">
+                        <option value="">— Choose Level —</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="semester" class="form-label">Semester</label>
+                    <select id="semester" class="form-select">
+                        <option value="">— Choose Semester —</option>
+                        <option value="first">First Semester</option>
+                        <option value="second">Second Semester</option>
+                    </select>
+                </div>
+
+                <button id="proceedBtn" class="btn-proceed">
+                    <i class="fas fa-arrow-right"></i>
+                    Proceed to Questions
+                </button>
+
+                <!-- Quick Access Cards -->
+                <div class="quick-access-row">
+                    <a href="students-tools.html" class="quick-access-card">
+                        <div class="quick-access-icon tools">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <span class="quick-access-label">Student Tools</span>
+                        <span class="quick-access-desc">Essential academic resources</span>
+                    </a>
+                    <a href="chatbot.html" class="quick-access-card">
+                        <div class="quick-access-icon assistant">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="quick-access-label">KASU Assistant</span>
+                        <span class="quick-access-desc">AI-powered academic help</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">60+</span>
+                    <span class="stat-label">Departments Covered</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1,000+</span>
+                    <span class="stat-label">Past Questions</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Active Students</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Satisfaction Rate</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Departments -->
+        <section class="departments-section">
+            <h2 class="section-heading">Popular Departments</h2>
+            <p class="section-subheading">Browse past questions from our most popular departments</p>
+            <div class="departments-grid">
+                <div class="dept-card" onclick="document.getElementById('department').value='accounting';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-calculator"></i></div>
+                    <div>
+                        <div class="dept-name">Accounting</div>
+                        <div class="dept-desc">Financial & managerial accounting</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='computer-science';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div>
+                        <div class="dept-name">Computer Science</div>
+                        <div class="dept-desc">Programming & algorithms</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='law';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div>
+                        <div class="dept-name">Law</div>
+                        <div class="dept-desc">Legal studies & jurisprudence</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='biochemistry';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-flask"></i></div>
+                    <div>
+                        <div class="dept-name">Biochemistry</div>
+                        <div class="dept-desc">Molecular biology & chemistry</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='nursing-nursing-science';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div>
+                        <div class="dept-name">Nursing</div>
+                        <div class="dept-desc">Healthcare & patient care</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='pharmacy';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-pills"></i></div>
+                    <div>
+                        <div class="dept-name">Pharmacy</div>
+                        <div class="dept-desc">Pharmaceutical sciences</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='economics';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-chart-line"></i></div>
+                    <div>
+                        <div class="dept-name">Economics</div>
+                        <div class="dept-desc">Micro & macroeconomics</div>
+                    </div>
+                </div>
+                <div class="dept-card" onclick="document.getElementById('department').value='microbiology';document.getElementById('department').dispatchEvent(new Event('change'));document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})">
+                    <div class="dept-icon"><i class="fas fa-microscope"></i></div>
+                    <div>
+                        <div class="dept-name">Microbiology</div>
+                        <div class="dept-desc">Microorganisms & immunology</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button onclick="document.getElementById('selectionSection').scrollIntoView({behavior:'smooth'})" class="hero-cta" style="padding:0.65rem 1.8rem;font-size:0.82rem;">
+                    View All Departments <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section class="tutorials-section">
+            <h2 class="section-heading">100-Level Tutorials</h2>
+            <p class="section-subheading">Comprehensive video tutorials and study materials designed specifically for 100-level students</p>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <div class="tutorial-icon-circle purple">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="tutorial-title">First Semester Notes & CBT Exams</h3>
+                    <p class="tutorial-desc">Covers Math 101, Physics 101, Chemistry 101, GST 111, and other general courses for first semester.</p>
+                    <button onclick="window.location.href='.ht'" class="btn-tutorial purple">
+                        <i class="fas fa-play-circle"></i> Access Tutorials
+                    </button>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-icon-circle emerald">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="tutorial-title">Second Semester Notes & CBT Exams</h3>
+                    <p class="tutorial-desc">Includes Math 102, Physics 102, Chemistry 102, GST 112, and other core courses for second semester.</p>
+                    <button onclick="window.location.href='#.html'" class="btn-tutorial emerald">
+                        <i class="fas fa-book-reader"></i> Access Tutorials
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Section -->
+        <section class="social-section">
+            <h3 class="social-title">Connect With Us</h3>
+            <div class="social-grid">
+                <a href="https://whatsapp.com/channel/0029VbBO1U40VycLsR8zx609" target="_blank" class="social-link whatsapp" aria-label="WhatsApp Channel">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://tiktok.com/@sazug.past.questi" target="_blank" class="social-link tiktok" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61552291692259" target="_blank" class="social-link facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/sazug2026?igsh=MmZnZXh4c3d6b21j" target="_blank" class="social-link instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/aliyu_garb18641" target="_blank" class="social-link twitter" aria-label="Twitter / X">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://youtube.com/@aliyugarbainnovations?si=nUetaDDBa6SSKt19" target="_blank" class="social-link youtube" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://t.me/+zS_kKGdf_V85NmM0" target="_blank" class="social-link telegram" aria-label="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4 class="footer-col-title">Quick Links</h4>
+                <a href="about.html" class="footer-link">About Us</a>
+                <a href="contact.html" class="footer-link">Contact Us</a>
+                <a href="freshers-guide.html" class="footer-link">Freshers Guide</a>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Legal</h4>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+                <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Resources</h4>
+                <a href="students-tools.html" class="footer-link">Students Tools</a>
+                <a href="chatbot.html" class="footer-link">KASU Assistant</a>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Contact Info</h4>
+                <div class="footer-info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:ka">support@kasu</a>
+                </div>
+                <div class="footer-info">
+                    <i class="fas fa-phone"></i>
+                    <span>08032469896</span>
+                </div>
+                <div class="footer-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Kaduna State University</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            KASU Past Questions Portal is an independent student-created platform and is not officially affiliated with Kaduna State University. All materials are provided for educational and revision purposes only.
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 KASU Past Questions Portal. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Banner -->
+    <div id="whatsappBanner" class="whatsapp-banner">
+        <div class="banner-content">
+            <div class="banner-icon-circle">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="banner-text">
+                <p class="banner-title-text">📢 Get notified when new past questions are added.</p>
+                <p class="banner-subtitle-text">Join our official KASU WhatsApp Updates Channel.</p>
+            </div>
+            <div class="banner-actions">
+                <a href="https://whatsapp.com/channel/0029VbBO1U40VycLsR8z" target="_blank" class="banner-button">
+                    Join Channel
+                </a>
+                <button id="closeBanner" class="banner-close-btn" aria-label="Close notification">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========== INTERNET CONNECTION CHECK ==========
+        window.addEventListener('load', function() {
+            checkInternetConnection();
+            window.addEventListener('online', function() {
+                document.getElementById('offlineMessage').style.display = 'none';
+                enablePageFunctionality(true);
+            });
+            window.addEventListener('offline', function() {
+                showOfflineMessage();
+                enablePageFunctionality(false);
+            });
+        });
+
+        function checkInternetConnection() {
+            if (!navigator.onLine) {
+                showOfflineMessage();
+                enablePageFunctionality(false);
+            }
+        }
+
+        function showOfflineMessage() {
+            document.getElementById('offlineMessage').style.display = 'flex';
+        }
+
+        function enablePageFunctionality(enable) {
+            const interactiveElements = document.querySelectorAll('button, select, a');
+            interactiveElements.forEach(element => {
+                if (enable) {
+                    element.removeAttribute('disabled');
+                    element.style.pointerEvents = 'auto';
+                    element.style.opacity = '1';
+                } else {
+                    element.setAttribute('disabled', 'disabled');
+                    element.style.pointerEvents = 'none';
+                    element.style.opacity = '0.7';
+                }
+            });
+        }
+
+        // ========== MOBILE MENU TOGGLE ==========
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // ========== NAVBAR SCROLL EFFECT ==========
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ========== DEPARTMENT & LEVEL SELECTION LOGIC (KASU COURSES) ==========
+        const departmentSelect = document.getElementById("department");
+        const levelSelect = document.getElementById("level");
+        const semesterSelect = document.getElementById("semester");
+
+        const levels = {
+            "accounting": ["100-level", "200-level", "300-level", "400-level"],
+            "agriculture": ["100-level", "200-level", "300-level", "400-level"],
+            "arabic-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "architecture": ["100-level", "200-level", "300-level", "400-level"],
+            "banking-and-finance": ["100-level", "200-level", "300-level", "400-level"],
+            "biochemistry": ["100-level", "200-level", "300-level", "400-level"],
+            "biological-sciences": ["100-level", "200-level", "300-level", "400-level"],
+            "biology": ["100-level", "200-level", "300-level", "400-level"],
+            "biotechnology": ["100-level", "200-level", "300-level", "400-level"],
+            "building-technology": ["100-level", "200-level", "300-level", "400-level"],
+            "business-administration": ["100-level", "200-level", "300-level", "400-level"],
+            "chemistry": ["100-level", "200-level", "300-level", "400-level"],
+            "chinese-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "christian-religious-studies-crs": ["100-level", "200-level", "300-level", "400-level"],
+            "computer-science": ["100-level", "200-level", "300-level", "400-level"],
+            "criminology-and-security-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "drama-performing-arts": ["100-level", "200-level", "300-level", "400-level"],
+            "economics": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-arabic": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-biology": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-chemistry": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-christian-religious-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-economics": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-english-language": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-geography": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-hausa": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-islamic-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-mathematics": ["100-level", "200-level", "300-level", "400-level"],
+            "education-and-physics": ["100-level", "200-level", "300-level", "400-level"],
+            "english-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "entrepreneurship": ["100-level", "200-level", "300-level", "400-level"],
+            "environmental-management": ["100-level", "200-level", "300-level", "400-level"],
+            "estate-management": ["100-level", "200-level", "300-level", "400-level"],
+            "french": ["100-level", "200-level", "300-level", "400-level"],
+            "geography": ["100-level", "200-level", "300-level", "400-level"],
+            "geology": ["100-level", "200-level", "300-level", "400-level"],
+            "geophysics": ["100-level", "200-level", "300-level", "400-level"],
+            "hausa": ["100-level", "200-level", "300-level", "400-level"],
+            "history": ["100-level", "200-level", "300-level", "400-level"],
+            "industrial-chemistry": ["100-level", "200-level", "300-level", "400-level"],
+            "industrial-relations-and-personnel-management": ["100-level", "200-level", "300-level",
+                "400-level"
+            ],
+            "international-relations-and-diplomacy": ["100-level", "200-level", "300-level", "400-level"],
+            "international-studies-and-diplomacy": ["100-level", "200-level", "300-level", "400-level"],
+            "islamic-studies": ["100-level", "200-level", "300-level", "400-level"],
+            "linguistics": ["100-level", "200-level", "300-level", "400-level"],
+            "marketing": ["100-level", "200-level", "300-level", "400-level"],
+            "mass-communication": ["100-level", "200-level", "300-level", "400-level"],
+            "mathematics": ["100-level", "200-level", "300-level", "400-level"],
+            "medical-laboratory-science": ["100-level", "200-level", "300-level", "400-level"],
+            "medicine-and-surgery": ["100-level", "200-level", "300-level", "400-level", "500-level", "600-level"],
+            "microbiology": ["100-level", "200-level", "300-level", "400-level"],
+            "nursing-nursing-science": ["100-level", "200-level", "300-level", "400-level", "500-level"],
+            "pharmacy": ["100-level", "200-level", "300-level", "400-level", "500-level", "600-level"],
+            "physics": ["100-level", "200-level", "300-level", "400-level"],
+            "physiotherapy": ["100-level", "200-level", "300-level", "400-level"],
+            "political-science": ["100-level", "200-level", "300-level", "400-level"],
+            "quantity-surveying": ["100-level", "200-level", "300-level", "400-level"],
+            "radiography": ["100-level", "200-level", "300-level", "400-level"],
+            "sociology": ["100-level", "200-level", "300-level", "400-level"],
+            "statistics": ["100-level", "200-level", "300-level", "400-level"],
+            "theatre-arts": ["100-level", "200-level", "300-level", "400-level"]
+        };
+
+        departmentSelect.addEventListener("change", function() {
+            const dept = this.value;
+            levelSelect.innerHTML = '<option value="">— Choose Level —</option>';
+            if (levels[dept]) {
+                levels[dept].forEach(lvl => {
+                    const option = document.createElement("option");
+                    option.value = lvl;
+                    option.textContent = lvl;
+                    levelSelect.appendChild(option);
+                });
+            }
+        });
+
+        // ========== PROCEED BUTTON ==========
+        document.getElementById("proceedBtn").addEventListener("click", function() {
+            const dept = departmentSelect.value;
+            const lvl = levelSelect.value;
+            const sem = semesterSelect.value;
+
+            if (!dept || !lvl || !sem) {
+                alert("Please select department, level, and semester to proceed.");
+                return;
+            }
+
+            const deptMap = {
+                "accounting": "accounting",
+                "agriculture": "agriculture",
+                "arabic-studies": "arabic-studies",
+                "architecture": "architecture",
+                "banking-and-finance": "banking-and-finance",
+                "biochemistry": "biochemistry",
+                "biological-sciences": "biological-sciences",
+                "biology": "biology",
+                "biotechnology": "biotechnology",
+                "building-technology": "building-technology",
+                "business-administration": "business-administration",
+                "chemistry": "chemistry",
+                "chinese-studies": "chinese-studies",
+                "christian-religious-studies-crs": "christian-religious-studies-crs",
+                "computer-science": "computer-science",
+                "criminology-and-security-studies": "criminology-and-security-studies",
+                "drama-performing-arts": "drama-performing-arts",
+                "economics": "economics",
+                "education-and-arabic": "education-and-arabic",
+                "education-and-biology": "education-and-biology",
+                "education-and-chemistry": "education-and-chemistry",
+                "education-and-christian-religious-studies": "education-and-christian-religious-studies",
+                "education-and-economics": "education-and-economics",
+                "education-and-english-language": "education-and-english-language",
+                "education-and-geography": "education-and-geography",
+                "education-and-hausa": "education-and-hausa",
+                "education-and-islamic-studies": "education-and-islamic-studies",
+                "education-and-mathematics": "education-and-mathematics",
+                "education-and-physics": "education-and-physics",
+                "english-studies": "english-studies",
+                "entrepreneurship": "entrepreneurship",
+                "environmental-management": "environmental-management",
+                "estate-management": "estate-management",
+                "french": "french",
+                "geography": "geography",
+                "geology": "geology",
+                "geophysics": "geophysics",
+                "hausa": "hausa",
+                "history": "history",
+                "industrial-chemistry": "industrial-chemistry",
+                "industrial-relations-and-personnel-management": "industrial-relations-and-personnel-management",
+                "international-relations-and-diplomacy": "international-relations-and-diplomacy",
+                "international-studies-and-diplomacy": "international-studies-and-diplomacy",
+                "islamic-studies": "islamic-studies",
+                "linguistics": "linguistics",
+                "marketing": "marketing",
+                "mass-communication": "mass-communication",
+                "mathematics": "mathematics",
+                "medical-laboratory-science": "medical-laboratory-science",
+                "medicine-and-surgery": "medicine-and-surgery",
+                "microbiology": "microbiology",
+                "nursing-nursing-science": "nursing-nursing-science",
+                "pharmacy": "pharmacy",
+                "physics": "physics",
+                "physiotherapy": "physiotherapy",
+                "political-science": "political-science",
+                "quantity-surveying": "quantity-surveying",
+                "radiography": "radiography",
+                "sociology": "sociology",
+                "statistics": "statistics",
+                "theatre-arts": "theatre-arts"
+            };
+
+            const redirectDept = deptMap[dept] || dept;
+            window.location.href = `questions.html?dept=${redirectDept}&level=${lvl}&semester=${sem}`;
+        });
+
+        // ========== WHATSAPP BANNER ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappBanner = document.getElementById('whatsappBanner');
+            const closeBannerBtn = document.getElementById('closeBanner');
+
+            const bannerClosed = sessionStorage.getItem('whatsappBannerClosed');
+
+            if (!bannerClosed && navigator.onLine) {
+                setTimeout(() => {
+                    whatsappBanner.style.display = 'block';
+                }, 1500);
+            }
+
+            if (closeBannerBtn) {
+                closeBannerBtn.addEventListener('click', function() {
+                    whatsappBanner.style.display = 'none';
+                    sessionStorage.setItem('whatsappBannerClosed', 'true');
+                });
+            }
+
+            window.addEventListener('offline', function() {
+                whatsappBanner.style.display = 'none';
+            });
+
+            window.addEventListener('online', function() {
+                if (!sessionStorage.getItem('whatsappBannerClosed')) {
+                    whatsappBanner.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
